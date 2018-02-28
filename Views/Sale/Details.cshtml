@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Bakery2018.Models.SaleDetail>
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sale Details</h4>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailKey)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleKey)</th>
+            <th>@Html.DisplayNameFor(model => model.ProductKey)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailPriceCharged)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailQuantity)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailDiscount)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailSaleTaxPercent)</th>
+            <th>@Html.DisplayNameFor(model => model.SaleDetailEatInTax)</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(model => item.SaleDetailKey)</td>
+            <td>@Html.DisplayFor(model => item.SaleKey)</td>
+            <td>@Html.DisplayFor(model => item.ProductKey)</td>
+            <td>@Html.DisplayFor(model => item.SaleDetailPriceCharged)</td>
+            <td>@Html.DisplayFor(model => item.SaleDetailQuantity)</td>
+            <td>@Html.DisplayFor(model => item.SaleDetailDiscount)</td>
+            <td>@Html.DisplayFor(model => item.SaleDetailSaleTaxPercent)</td>
+            <td>@Html.DisplayFor(model => item.SaleDetailEatInTax)</td>
+        </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

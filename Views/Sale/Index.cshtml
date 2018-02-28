@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Bakery2018.Models.Sale>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Sales</h2>
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.SaleDate)</th>
+            <th>@Html.DisplayNameFor(model => model.CustomerKey)</th>
+            <th>@Html.DisplayNameFor(model => model.EmployeeKey)</th>
+            <th>Details</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(model => item.SaleDate)</td>
+            <td>@Html.DisplayFor(model => item.CustomerKey)</td>
+            <td>@Html.DisplayFor(model => item.EmployeeKey)</td>
+            <td>@Html.ActionLink("Details", "Details", new { id = item.SaleKey })</td>
+        </tr>
+        }
+    </table>
+</div>
